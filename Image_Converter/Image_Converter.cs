@@ -10,12 +10,13 @@ namespace Image_Converter
         {
 
 
-            string Icon_Input = Path.Combine(Environment.CurrentDirectory, @"media\", "test.png");
-            string Icon_Output = Path.Combine(Environment.CurrentDirectory, @"media\", "test.ico");
+            string Icon_Input = Path.Combine(Environment.CurrentDirectory, @"..\..\..\media\", "test.png");
+            string Icon_Output = Path.Combine(Environment.CurrentDirectory, @"..\..\..\media\", "test.ico");
             using (FileStream stream = System.IO.File.OpenWrite(Icon_Output))
             {
                 Bitmap bitmap = (Bitmap)Image.FromFile(Icon_Input);
                 Icon.FromHandle(bitmap.GetHicon()).Save(stream);
+               Console.WriteLine("Erfolg!");
             }
 
 
